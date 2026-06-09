@@ -64,10 +64,62 @@ function barraNavExpandida( ) {
 
 }
 
+function barraNavExpandidaHuesped()
+{
+  elEncabezado.innerHTML = `
+    <div class="relative z-20 max-w-5xl mx-auto mt-4 md:mt-10 px-4">
+      <div class="flex items-center bg-white rounded-full shadow-lg border border-gray-200 p-2">
+        <div class="flex-1 px-6 py-2 rounded-full hover:bg-gray-100 cursor-pointer transition relative">
+          <label class="block text-xs font-bold text-gray-800 tracking-wide">LOCATION</label>
+          <input id="inputLocation" type="text" placeholder="Where to?" value="" class="text-sm text-gray-700 w-full outline-none bg-transparent" />
+        </div>
+        <div class="h-8 w-px bg-gray-300 hidden md:block"></div>
+        <div class="flex-1 px-6 py-2 rounded-full hover:bg-gray-100 cursor-pointer transition relative">
+          <label class="block text-xs font-bold text-gray-800 tracking-wide">GUESTS</label>
+          <input id="inputGuests" type="text" placeholder="Add guests" value="" class="text-sm text-gray-700 w-full outline-none bg-transparent" readonly />         
+        <div class="absolute top-full left-0 mt-3 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 z-30">
+      <div class="mb-6">
+        <h3 class="text-base font-bold text-gray-900">Adults</h3>
+        <p class="text-sm text-gray-400 mb-3">Ages 13 or above</p>
+        <div class="flex items-center gap-4">
+          <button class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-500 transition text-lg font-light" data-action="adults-minus">−</button>
+          <span id="spanAdults" class="text-base font-medium text-gray-800 w-6 text-center">0</span>
+          <button class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-500 transition text-lg font-light" data-action="adults-plus">+</button>
+        </div>
+      </div>
+      <div class="h-px bg-gray-100 mb-6"></div>
+      <div>
+        <h3 class="text-base font-bold text-gray-900">Children</h3>
+        <p class="text-sm text-gray-400 mb-3">Ages 0-12</p>
+        <div class="flex items-center gap-4">
+          <button class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-500 transition text-lg font-light" data-action="children-minus">−</button>
+          <span id="spanChildren" class="text-base font-medium text-gray-800 w-6 text-center">0</span>
+          <button class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-500 transition text-lg font-light" data-action="children-plus">+</button>
+        </div>
+      </div>
+    </div>
+          </div>
+        <button id="btnSearchExpanded" class="bg-[#FF385C] hover:bg-[#E0314F] text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition ml-2">
+          <img src="./src/images/icons/search.svg" alt="search" class="h-5 w-5">
+          <span>Search</span>
+        </button>
+      </div>
+    </div>
+    
+    `;
+
+  }
+
+
 
 barraNavReplegada();
 
+
+const inputHuespedes = document.getElementById('huespedes');
+
+inputHuespedes.addEventListener('click',barraNavExpandidaHuesped);
+
 const inputLugares = document.getElementById('lugares');
 
-inputLugares.addEventListener('click',barraNavExpandida);
+inputLugares.addEventListener('click',barraNavExpandidaHuesped);
 
