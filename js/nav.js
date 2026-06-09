@@ -1,4 +1,4 @@
-import { getAlojamientos, renderCards } from './main.js';
+import { getAlojamientos, renderCards } from '/js/main.js';
 
 const elEncabezado = document.getElementById('encabezado');
 
